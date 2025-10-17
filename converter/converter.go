@@ -15,7 +15,7 @@ func ConvertMDToHTML(mdContent string) (string, error) {
 	return sanitize(raw), nil
 }
 
-func ConvertFile(inputPath, outputPath string) error {
+func ConvertFile(inputPath, outputPath, PaterPath string) error {
 
 	in, err := os.ReadFile(inputPath)
 	if err != nil {
@@ -31,7 +31,7 @@ func ConvertFile(inputPath, outputPath string) error {
 	if err != nil {
 		return err
 	}
-	tplData, err := os.ReadFile("C:\\Users\\kisel\\GolandProjects\\bebebe\\resurse\\pattern\\Ru_langveg.html")
+	tplData, err := os.ReadFile(PaterPath)
 	if err != nil {
 		return err
 	}
