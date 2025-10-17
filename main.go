@@ -1,11 +1,10 @@
 package main
 
 import (
+	"bebebe/converter"
 	"flag"
 	"fmt"
 	"os"
-
-	"bebebe/converter"
 )
 
 func main() {
@@ -18,9 +17,14 @@ func main() {
 		flag.Usage()
 		return
 	}
+	if *output == "" {
+		flag.Usage()
+		return
+	}
 
 	if err := converter.ConvertFile(*input, *output); err != nil {
 		fmt.Fprintln(os.Stderr, "ошибка:", err)
 		os.Exit(1)
 	}
+
 }

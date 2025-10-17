@@ -7,11 +7,11 @@ var policy = func() *bluemonday.Policy {
 	p := bluemonday.StrictPolicy() //
 
 	p.AllowElements("p", "br", "hr", "blockquote", "pre", "code")
+	p.AllowElements("table", "thead", "tbody", "tr", "th", "td")
 	p.AllowElements("h1", "h2", "h3", "h4", "h5", "h6")
 	p.AllowElements("strong", "em", "del")
 	p.AllowElements("ul", "ol", "li")
 	p.AllowElements("a", "img")
-	p.AllowElements("table", "thead", "tbody", "tr", "th", "td")
 
 	p.AllowAttrs("src", "alt").OnElements("img")
 	p.AllowAttrs("href").OnElements("a")
