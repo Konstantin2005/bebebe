@@ -3,7 +3,6 @@ package converter
 import (
 	"bytes"
 
-	chromahtml "github.com/alecthomas/chroma/v2/formatters/html"
 	"github.com/yuin/goldmark"
 	highlighting "github.com/yuin/goldmark-highlighting/v2"
 	"github.com/yuin/goldmark/extension"
@@ -19,9 +18,6 @@ var md = goldmark.New(
 		extension.TaskList,
 		highlighting.NewHighlighting(
 			highlighting.WithStyle("monokai"),
-			highlighting.WithFormatOptions(
-				chromahtml.WithLineNumbers(true),
-			),
 		),
 	),
 	goldmark.WithRendererOptions(
